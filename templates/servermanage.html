@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block body-conten %}
+<div  style="width: 1070px;float: right;margin-top: 50px">
+    <table class="table">
+      </br>
+      <caption><h3>IP地址列表</h3></caption>
+      <thead>
+        <tr>
+          <th>IP</th>
+          <th>使用人</th>
+          <th>用途</th>
+          <th>开始使用日期</th>
+          <th>结束使用日期</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in ips %}
+        <tr class="alert-success">
+          <td>{{ i.ip }}  </td>
+          <td>{{ i.use_people }}</td>
+          <td>{{ i.use_place }}</td>
+          <td>{{ i.use_begindate }}</td>
+          <td>{{ i.use_enddate }}</td>
+          <td>{{ i.use_note }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}
